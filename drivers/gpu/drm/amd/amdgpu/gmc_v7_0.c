@@ -1067,6 +1067,10 @@ static int gmc_v7_0_sw_init(void *handle)
 	if (r)
 		return r;
 
+
+	dev_info(adev->dev, "Done gart\n");
+
+
 	/*
 	 * number of VMs
 	 * VMID 0 is reserved for System
@@ -1091,6 +1095,8 @@ static int gmc_v7_0_sw_init(void *handle)
 	if (!adev->gmc.vm_fault_info)
 		return -ENOMEM;
 	atomic_set(&adev->gmc.vm_fault_info_updated, 0);
+
+	dev_info(adev->dev, "Done init\n");
 
 	return 0;
 }
