@@ -1,3 +1,19 @@
+This is a fork of codedwrench's 5.15.y PS4 Linux kernel, with kernel preemption (realtime) enabled as well as USB sound modules.
+
+To compile, run "make menuconfig", make any changes you may want, then hit exit to save. 
+
+After this, just run make -j8 to start compilation.
+
+Once done, move your build folder to /lib/modules with the exact name of your kernel (which you can find with "file /path/to/bzimage" on a non-running kernel).
+  ex, "mv /home/someuser/ps4-linux /lib/modules/5.15.15-ps4-rt+"
+
+create a symbolic link in your build folder, pointing to your build folder, called build. 
+  ex, "ln -s /lib/modules/5.15.15-ps4-rt+ /lib/modules/5.15.15-ps4-rt+/build"
+
+Congrats. You can now boot your kernel and use kernel modules, including through DKMS. 
+
+---------------------------------------------------------------------------
+
 Linux kernel
 ============
 
